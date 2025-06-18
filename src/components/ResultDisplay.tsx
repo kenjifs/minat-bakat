@@ -42,43 +42,69 @@ function ResultDisplay({ nama, kelas, pilihan, skor }: Props) {
   const rekomendasi = rekomendasiProfesi(unggul);
 
   return (
-    <div className="p-4">
-      <h2 className="text-xl font-bold mb-2">Hasil Akhir</h2>
-      <div className="mb-2">Nama: {nama}</div>
-      <div className="mb-2">Kelas: {kelas}</div>
-      <div className="mb-2">
-        <b>Kepribadian yang dipilih:</b> {pilihan.join(', ')}
+    <div className="p-2">
+      <h2 className="text-2xl font-bold mb-2 text-indigo-700 text-center">
+        Hasil Akhir
+      </h2>
+      <div className="grid grid-cols-2 gap-3 mb-3">
+        <div>
+          <div className="mb-1 text-gray-500 text-xs">Nama</div>
+          <div className="font-semibold text-indigo-800">{nama}</div>
+        </div>
+        <div>
+          <div className="mb-1 text-gray-500 text-xs">Kelas</div>
+          <div className="font-semibold text-indigo-800">{kelas}</div>
+        </div>
       </div>
-      <ul className="mt-2 mb-4">
-        {pilihan.map((p) => (
-          <li key={p} className="mb-1">
-            <b>{p}:</b> {deskripsiKepribadian[p]}
-          </li>
-        ))}
-      </ul>
-      <h3 className="font-bold mt-4">Hasil Pengujian:</h3>
-      <ul>
-        {Object.entries(skor).map(([bid, val]) => (
-          <li key={bid}>
-            {bid}: {val}%
-          </li>
-        ))}
-      </ul>
-      <h3 className="font-bold mt-4">Rekomendasi Profesi:</h3>
-      {rekomendasi.length > 0 ? (
-        <ul>
-          {rekomendasi.map(({ bidang, profesi }) => (
-            <li key={bidang}>
-              <span className="font-semibold">{bidang}:</span>{' '}
-              {profesi.join(', ')}
+      <div className="my-3">
+        <div className="font-semibold text-indigo-600">
+          Kepribadian yang dipilih:
+        </div>
+        <ul className="list-inside list-disc text-gray-700 ml-4">
+          {pilihan.map((p) => (
+            <li key={p}>
+              <span className="font-bold text-indigo-700">{p}</span>:{' '}
+              <span className="italic">{deskripsiKepribadian[p]}</span>
             </li>
           ))}
         </ul>
-      ) : (
-        <div>
-          Tidak ada bidang yang menonjol. Cobalah eksplorasi lebih lanjut.
+      </div>
+      <div className="my-3">
+        <div className="font-semibold text-indigo-600">Hasil Pengujian:</div>
+        <ul className="mt-1">
+          {Object.entries(skor).map(([bid, val]) => (
+            <li
+              key={bid}
+              className={`py-1 px-2 rounded text-sm ${
+                val >= 60
+                  ? 'bg-indigo-100 text-indigo-700 font-bold'
+                  : 'text-gray-600'
+              }`}
+            >
+              {bid}: {val}%
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="my-3">
+        <div className="font-semibold text-indigo-600">
+          Rekomendasi Profesi:
         </div>
-      )}
+        {rekomendasi.length > 0 ? (
+          <ul className="list-inside list-disc text-indigo-800 ml-5 mt-1">
+            {rekomendasi.map(({ bidang, profesi }) => (
+              <li key={bidang}>
+                <span className="font-bold">{bidang}</span>:{' '}
+                {profesi.join(', ')}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div className="text-gray-600 mt-2 italic">
+            Tidak ada bidang yang menonjol. Cobalah eksplorasi lebih lanjut!
+          </div>
+        )}
+      </div>
     </div>
   );
 }
