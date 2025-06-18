@@ -1,54 +1,53 @@
-# React + TypeScript + Vite
+# Sistem Pakar Minat & Bakat Siswa
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sistem Pakar Minat & Bakat Siswa adalah aplikasi web yang membantu siswa mengidentifikasi tipe kepribadian dan minat bakatnya. Aplikasi ini memberikan rekomendasi bidang dan profesi berdasarkan hasil tes interaktif.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Fitur
 
-## Expanding the ESLint configuration
+- Pilih tipe kepribadian dengan deskripsi singkat.
+- Jawab pertanyaan minat & bakat secara interaktif (dengan progress bar).
+- Hasil akhir: skor bidang, kepribadian unggulan, dan rekomendasi profesi.
+- UI modern, responsif, & mudah digunakan (Tailwind CSS).
+- Fitur reset dengan konfirmasi modal.
+- Modal dan animasi smooth.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🛠️ Teknologi
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## ⚡ Instalasi & Menjalankan Project
+
+1. **Clone repo**
+   <pre> https://github.com/kenjifs/minat-bakat.git </pre>
+
+2. **Install dependencies**
+   <pre> npm install </pre>
+
+3. **Jalankan aplikasi**
+   <pre> npm run dev </pre>
+
+4. **Buka di browser**
+   <pre> http://localhost:5173 </pre>
+
+## 🤝 Kontribusi
+
+Kontribusi sangat terbuka!  
+Silakan fork, buat branch, dan pull request jika ingin menambah fitur atau memperbaiki bug.
+
+---
+
+## 📄 Lisensi
+
+MIT License
+
+---
+
+> Made with ❤️ by kenjifs
